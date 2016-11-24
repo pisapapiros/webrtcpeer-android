@@ -362,6 +362,18 @@ final class MediaResourceManager implements NBMWebRTCPeer.Observer {
         });
     }
 
+    void setUpstreamVideoEnabled(final boolean enable) {
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                renderVideo = enable;
+                if (localVideoTrack != null) {
+                    localVideoTrack.setEnabled(renderVideo);
+                }
+            }
+        });
+    }
+
     boolean getVideoEnabled(){
         return renderVideo;
     }
