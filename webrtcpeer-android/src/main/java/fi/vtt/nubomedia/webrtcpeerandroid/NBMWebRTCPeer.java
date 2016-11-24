@@ -606,6 +606,15 @@ public class NBMWebRTCPeer{
     }
 
     /**
+     * Enable or disable upstream video
+     * @param enable If true then video will be enabled, if false then video will be disabled
+     */
+    @SuppressWarnings("unused")
+    public void enableUpstreamVideo(boolean enable){
+        mediaResourceManager.setUpstreamVideoEnabled(enable);
+    }
+
+    /**
      * Check if audio is enabled
      * @return true if audio is enabled, otherwise false
      */
